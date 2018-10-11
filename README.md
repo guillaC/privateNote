@@ -6,14 +6,21 @@ Simple, clean self destructing note site!
 
 ![screenshot](https://cdn.pbrd.co/images/HHZgcWB.png)
 
+# Demo
+
+http://guillaume.xyz/privateNote/
+
 # Features
+
 - [x] Self destructing notes
 - [x] AES256 encryption
 
 # Credits
+
 - [HackCSS](https://hackcss.egoist.moe)
 
 # Usage
+
 Create database
 
 ```SQL
