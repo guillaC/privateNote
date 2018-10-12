@@ -19,6 +19,7 @@ function getMessage($connection, $id, $password = "Guillaume"){ // OK
     if(!$enregistrements) return 'This note was read and destroyed';
     list($encrypted_data, $iv) = explode('::', base64_decode($enregistrements->message), 2);
     $message = openssl_decrypt($encrypted_data, 'aes-256-cbc', $password, 0, $iv);
+    if (!$message) return 'Password incorrect.';
     deleteMessage($connection, $id);
     return openssl_decrypt($encrypted_data, 'aes-256-cbc', $password, 0, $iv);
 }
