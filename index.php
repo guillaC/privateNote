@@ -13,20 +13,18 @@ include_once("sql.php");
 include_once("func.php");
 if (isset($_POST["message"],$_POST["password"])){
     $id_message = rtrim(base64_encode(md5(microtime())),"=");
-    $password = $_POST["password"];
+	$password = $_POST["password"];
     if ($password==""){
-        $message_link = "http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']."?id=".$id_message;
-        saveMessage($connection, $id_message, $_POST["message"]);
-    } else {
-        $message_link = "http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']."?id=".$id_message."&password=".$password;
-        saveMessage($connection, $id_message, $_POST["message"],$password);
+        $password=rtrim(base64_encode(microtime()),"=");
     }
+	$message_link = "http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']."?id=".$id_message."&password=".$password;
+    saveMessage($connection, $id_message, $_POST["message"],$password);
     echo '<h2>Note link ready</h2><div class="alert alert-info">'.htmlspecialchars($message_link).'</div><hr>The note will self-destruct after reading it.';
 } else if (isset($_GET["id"])){
   if (isset($_GET["password"])){
     $data = getMessage($connection,$_GET["id"],$_GET["password"]);
   } else {
-    $data = getMessage($connection,$_GET["id"]);
+    $data = "parameter Password not set";
   }
   $data=htmlspecialchars($data);
   echo '<div class="alert alert-info">'.str_replace("\r\n","<br>",$data).'</div>';
