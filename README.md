@@ -4,7 +4,7 @@ Simple, clean self destructing note site!
 
 # Screenshots
 
-![screenshot](https://cdn.pbrd.co/images/HHZgcWB.png)
+![screenshot](https://image.noelshack.com/fichiers/2019/37/1/1568046466-privatenote.png)
 
 # Demo
 
