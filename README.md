@@ -6,10 +6,6 @@ Simple, clean self destructing note site!
 
 ![screenshot](https://image.noelshack.com/fichiers/2019/37/1/1568046466-privatenote.png)
 
-# Demo
-
-http://guillaume.xyz/privateNote/
-
 # Features
 
 - [x] Self destructing notes
